@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>A self-replicating button.</title>
+	<link href="asrb.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript">
+		var selfReplicate = function(){
+			var button = document.createElement('input');
+			button.value = "asrb";
+			button.type="button";
+			button.onclick = selfReplicate;
+			document.getElementsByTagName('body')[0].appendChild(button);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" onclick="selfReplicate();" value="asrb" />
+	<div id="external-scripts">
+
+	</div>
+</body>
+</html>
