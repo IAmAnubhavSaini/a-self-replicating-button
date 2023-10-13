@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+}
+
+.box {
+    margin: 0 20px;
+    padding: 10px;
+}

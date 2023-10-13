@@ -5,19 +5,21 @@
 	<title>A self-replicating button.</title>
 	<link href="asrb.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript">
-		var selfReplicate = function(){
-			var button = document.createElement('input');
+
+		const selfReplicate = function (ele) {
+			const box = document.createElement('div');
+			box.classList.add("box");
+			console.log(ele);
+			const button = document.createElement('input');
 			button.value = "asrb";
-			button.type="button";
-			button.onclick = selfReplicate;
-			document.getElementsByTagName('body')[0].appendChild(button);
-		}
+			button.type = "button";
+			button.onclick = () => selfReplicate(button);
+			box.appendChild(button);
+			ele.parentNode.appendChild(box);
+		};
 	</script>
 </head>
 <body>
-	<input type="button" onclick="selfReplicate();" value="asrb" />
-	<div id="external-scripts">
-
-	</div>
+	<input type="button" onclick="selfReplicate(this);" value="asrb" />
 </body>
 </html>
